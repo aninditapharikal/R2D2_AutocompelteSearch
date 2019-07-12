@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-combined.css">
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="MyController.js"></script>
+    <script src="ui-bootstrap-tpls.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+<div ng-app='AutocompleteModule'>
+
+<div class="container">
+    <div ng-controller="MyController" class="row-fluid">
+        <form class="row-fluid">
+            <div class="row">
+            <div class="container-fluid">
+                Country Name <input type="text" class="form-control autocomplete" ng-model="selected"
+                                    typeahead="movie for movie in movies | filter:$viewValue" typeahead-on-select='onSelect($item, $model, $label)'>
+            </div>
+
+            <div style="padding-left: 20px;">
+                <div class="card border-primary" style="width: 18rem;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{movieDetail[0].name}}</h5>
+                            <p class="card-text">{{movieDetail[0].details}}</p>
+                            <a href='https://www.themoviedb.org' class="btn btn-primary">Go Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
